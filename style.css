@@ -1,0 +1,19 @@
+body{
+  text-align: center;
+}
+
+#inkSelection{
+  margin-bottom: 20px;
+}
+
+#canvasContainer{
+  height: 500px;
+  width: 500px;
+  display: grid;
+  border: solid;
+  border-width: 2px;
+}
+
+#footer{
+  margin-top: 20px;
+}
