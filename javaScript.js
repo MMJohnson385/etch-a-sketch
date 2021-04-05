@@ -21,7 +21,7 @@ function sizeSelect(){
   }
   console.log('Canvas Size');
   console.log(canvasSize);
-} //prompts user to choose the size
+} //prompts user to choose the size limited between 2 and 100 and stores the dimension
 
 
 function drawCanvas(size, color){
@@ -37,11 +37,10 @@ function drawCanvas(size, color){
   const gridColumns = 'grid-template-columns: ' + sizeGrid(size);
   const gridRows = 'grid-template-rows: ' + sizeGrid(size);
 
-  canvas.style = `${gridColumns}; ${gridRows};`;// adds the size of the height and width
+  canvas.style = `${gridColumns}; ${gridRows};`;// inputs the size of the height and width
 
   const gridSquare = document.createElement('div');
     gridSquare.classList.toggle('gridSquare');
-    //gridSquare.style = 'border:solid; border-width: 1px;'
   
   const gridArea = size * size; 
       // calculates the number of boxes needed
@@ -61,7 +60,6 @@ function drawCanvas(size, color){
   } else {
     blackInk();
   }// chooses the ink 
-
 }
 
 function clearCanvas(){
@@ -83,7 +81,7 @@ blackInkButton.addEventListener('click', () =>{
   inkColor = 'black';
   drawCanvas(canvasSize, inkColor);
   console.log(inkColor);
-});//erases grid and redraws it and utilizes rainbow ink
+});//erases grid and redraws it and utilizes black ink
 
 function blackInk(){
   const blackInk = document.querySelectorAll('.gridSquare');
@@ -103,7 +101,7 @@ grayScaleButton.addEventListener('click', () =>{
   inkColor = 'gray';
   drawCanvas(canvasSize, inkColor);
   console.log(inkColor);
-});// erases grid and redraws it and utilizes gray ink
+});// erases grid and redraws it and utilizes gray shading ink
 
 function grayScaleInk(){
   const grayInk = document.querySelectorAll('.gridSquare');
@@ -118,7 +116,7 @@ function grayScaleInk(){
         e.target.style.background = 'rgb(153, 153, 153)'; //40% black
       } else if (e.target.style.background == 'rgb(153, 153, 153)'){ //40% black
         e.target.style.background = 'rgb(127, 127, 127)'; //50% black
-      } else if (e.currentTarget.style.background == 'rgb(127, 127, 127)'){ //50% black
+      } else if (e.target.style.background == 'rgb(127, 127, 127)'){ //50% black
         e.target.style.background = 'rgb(102, 102, 102)'; //60% black
       } else if (e.target.style.background == 'rgb(102, 102, 102)'){ //60% black
         e.target.style.background = 'rgb(76, 76, 76)'; //70% black
@@ -159,7 +157,9 @@ function rainbowInk(){
       } else if (e.target.style.background == 'rgb(255, 255, 0)'){//yellow
         e.target.style.background = 'rgb(0, 255, 0)'; //green
       } else if (e.target.style.background == 'rgb(0, 255, 0)'){//green
-        e.target.style.background = 'rgb(0, 0, 255)';//blue
+        e.target.style.background = 'rgb(0, 188, 242)';//teal
+      } else if (e.target.style.background == 'rgb(0, 188, 242)'){//teal
+        e.target.style.background = 'rgb(0, 0, 255)'; //blue
       } else if (e.target.style.background == 'rgb(0, 0, 255)'){//blue
         e.target.style.background = 'rgb(75, 0, 130)'; //indigo
       } else if (e.target.style.background == 'rgb(75, 0, 130)'){//indigo

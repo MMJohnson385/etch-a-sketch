@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Etch-a-Sketch</title>
+    <title>Sketch-Pad</title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
     <link rel = "stylesheet" href = "style.css">
+    
   </head>
   <body>
-    
-    <div id = "inkSelection">
-      <button id = "blackInk">Black</button>
-      <button id = "grayScaleInk">Pencil</button>
-      <button id = "rainbowInk">Rainbow</button>
-      <button id = "randomInk">Random</button>
-    </div>
+    <h1 id = "title">Sketch-Pad</h1>
 
     <div class = "center">
       <div id = "canvasContainer"></div>
+      <div id = "inkSelection">
+        <button id = "blackInk"><b>Black</b></button>
+        <button id = "grayScaleInk"><b>Pencil</b></button>
+        <button id = "rainbowInk"><b>Rainbow</b></button>
+        <button id = "randomInk"><b>Random</b></button>
+        <button id = "sizeInput"><b>Resize</b></button>
+        <button id = "clearCanvas"><b>Clear</b></button>
+      </div>
     </div>
-    <div id = "footer">
-      <button id = "sizeInput">Resize Canvas</button>
-      <button id = "clearCanvas">Clear Canvas</button>
-    </div>
+   
 
     <script src = "javaScript.js"></script>
     
